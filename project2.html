@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Illumination - Renascence</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Illumination</h1>
+									</header>
+
+
+
+									<hr class="major" />
+
+									<h2>Requirement</h2>
+									<p>Here comes the new project.This project may be a little difficult.You have 2 choices:</p>
+
+									<p>1:Based on last project:Let's your sitck man move</p>
+
+									<p>2:Create your own scene,you can place anything in it</p>
+
+									<p>Choose one and use at least two different method such as Phong model, Gouraud model to complete this project.</p>
+						<span class="image"><img src="images/p2_1.png" /></span>	
+									<hr class="major" />
+
+									<h2>Experiment Procedure</h2>
+									<p>The phong illumination divide light into 3 kinds, they are ambient, diffuse and specular. </p>
+									<ul><li>ambient: light source represents an omni-directional, fixed-intensity and fixed-color light source that affects all objects in the scene equally. </li></ul>
+									<ul><li>diffuse: the reflection of light from a surface such that an incident ray is reflected at many angles rather than at just one angle as in the case of specular reflection.</li></ul>
+									<ul><li>specular: each incident ray is reflected, with the reflected ray having the same angle to the surface normal as the incident ray.</li></ul>
+									<p>The formula and illustration are below.</p>
+						<span class="image"><img src="images/p2_2.png" /></span>
+						<span class="image"><img src="images/p2_3.png" /></span>
+						<p>In this experiment, I compelte the flat shading and phong shading. The main parts are vertex and fage files. The former calculate the vertex light, and the latter calculate the fragment light</p>
+									<p>In flat shading, we can get the normal vector of fragment form three normal vector of vertexs, and regard this normal vector as the normal vector of every pixel of this fragment. It means a fragment has only one color. If the object is divided into a little fragments, it will looks bad. We can see every piece of the object. And there is no transition between fragment and fragment, the difference between color of fragments is great.</p>
+									<p>
+									In phong shading, we calculate normal vector of every pixel with interpolation, and calculate the color of every piexl respectively. It will make the object looks very smooth.</p>
+
+									<hr class="major" />
+
+									<h2>Demo</h2>
+									<p>This video shows the following illustration:</p>
+									<ul><li>flat shading</li></ul>
+									<ul><li>flat shading(only ambient)</li></ul>
+									<ul><li>flat shading(only diffuse)</li></ul>
+									<ul><li>flat shading(only specular)</li></ul>
+									<ul><li>phong shading</li></ul>
+									<ul><li>phong shading(only ambient)</li></ul>
+									<ul><li>phong shading(only diffuse)</li></ul>
+									<ul><li>phong shading(only specular)</li></ul>
+
+				<article id="pj1">
+				<h2 class="major"</h2>
+				<span class="video main"><video src="shading.mp4" heigh="800" width="800" controls="controls"></video></span>
+				</article>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="project1.html">Stick Man</a></li>
+										<li><a href="project2.html">Illumination</a></li>
+										<li><a href="project3.html">texture(OP)</a></li>
+										<li><a href="project4.html">Ray Tracing</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Links</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="http://www.cs.sdu.edu.cn/~baoquan/course/S17_CG.html" class="image"><img src="images/cg.png" /></a>
+											<p>Course Website </p>
+										</article>
+										<article>
+											<a href="http://irc.cs.sdu.edu.cn/webAction!index.chtml" class="image"><img src="images/irc.png" /></a>
+											<p>IRC </p>
+										</article>
+										<article>
+											<a href="http://www.cs.sdu.edu.cn/~baoquan/" class="image"><img src="images/chen2.png"  /></a>
+											<p>Baoquan Chen</p>
+										</article>
+										<article>
+											<a href="http://yangyan.li/" class="image"><img src="images/li.png"  /></a>
+											<p>Yangyan li</p>
+										</article>
+										<article>
+											<a href="https://en.wikipedia.org/wiki/Computer_graphics" class="image"><img src="images/wiki.png"  /></a>
+											<p>Wiki</p>
+										</article>
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">im.renascence@gmail.com</a></li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+
+						</div>
+					</div>
+
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

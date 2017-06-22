@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Texture(op) - Renascence</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Texture</h1>
+									</header>
+
+
+
+									<hr class="major" />
+
+									<h2>Requirement</h2>
+									<p>Free Style</p>
+									<hr class="major" />
+
+									<h2>Experiment Procedure</h2>
+									<p>Texture mapping is a method for defining high frequency detail, surface texture, or color information on a computer-generated graphic or 3D model.</p>
+									<span class="image"><img src="images/p3_2.png" /></span>
+									<p>To map the texture to the geometry, first we need to load the texture into memory, and after loading the texture becomes part of the OpenGL's current texture state. OpenGL provides the following three methods to load the texture from the memory buffer:</p>
+									<ul><li>void glTexImage1D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void *data);</li></ul>
+									<ul><li>void glTexIamge2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void *data);</li></ul>
+									<ul><li>void glTexIamge3D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void *data);</li></ul>
+									<p>To map textures to geometries, we need to tell how OpenGL maps these textures. Texture elements are not placed according to the position in memory (unlike pixels). Texture uses more abstract texture coordinates to determine where the texture elements are placed. The texture coordinates contain x, y, z, and w, which are similar to the vertex coordinates of the s, t, r, and q axes, to support a 1-dimensional to 3-dimensional texture. Q is used to scale the texture coordinates, that is, the coordinates of the normalized coordinates are s / q, t / q, r / q, the default is 1.0. The texture coordinate is a floating point with a range of [0.0,1.0]. The following figure explains how texture coordinates place texture elements:</p>
+									<span class="image"><img src="images/p3_3.png" /></span>	
+									<p>We can set the texture coordinates through the glTexCoord function, which is similar to setting the vertex coordinates. Here are three commonly used glTexCoord variants:</p>
+									<ul><li>void glTexCoord1f(GLfloat s);</li></ul>
+									<ul><li>void glTexCoord2f(GLfloat s, GLfloat t);</li></ul>
+									<ul><li>void glTexCoord3f(GLfloat s, GLfloat t, GLfloat r);</li></ul>
+									<p>
+									Note that the texture coordinates are like the surface normals, and the color values are set before the vertices are set. Use these functions above to set texture coordinates for each vertex. Then OpenGL will scale the texture as needed to map to the geometry. The following figure maps the two-dimensional texture to a square GL_QUADE element, noting that the four corners of the texture correspond to the four corners of the square.</p>
+									<span class="image"><img src="images/p3_4.png" /></span>
+									<hr class="major" />
+
+									<h2>Demo</h2>
+									<p>The floor and the wall have different texture.</p>
+									<span class="image"><img src="images/p3_1.png" /></span>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="project1.html">Stick Man</a></li>
+										<li><a href="project2.html">Illumination</a></li>
+										<li><a href="project3.html">texture(OP)</a></li>
+										<li><a href="project4.html">Ray Tracing</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Links</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="http://www.cs.sdu.edu.cn/~baoquan/course/S17_CG.html" class="image"><img src="images/cg.png" /></a>
+											<p>Course Website </p>
+										</article>
+										<article>
+											<a href="http://irc.cs.sdu.edu.cn/webAction!index.chtml" class="image"><img src="images/irc.png" /></a>
+											<p>IRC </p>
+										</article>
+										<article>
+											<a href="http://www.cs.sdu.edu.cn/~baoquan/" class="image"><img src="images/chen2.png"  /></a>
+											<p>Baoquan Chen</p>
+										</article>
+										<article>
+											<a href="http://yangyan.li/" class="image"><img src="images/li.png"  /></a>
+											<p>Yangyan li</p>
+										</article>
+										<article>
+											<a href="https://en.wikipedia.org/wiki/Computer_graphics" class="image"><img src="images/wiki.png"  /></a>
+											<p>Wiki</p>
+										</article>
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">im.renascence@gmail.com</a></li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+
+						</div>
+					</div>
+
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

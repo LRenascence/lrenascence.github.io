@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Stick Man - Renascence</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Stick Man</h1>
+									</header>
+
+
+
+									<hr class="major" />
+
+									<h2>Requirement</h2>
+									<p>Last class,we have learn many knowledge about transformation.Now you need to complete the project II this week,I guess teacher has introduced the detail about this project,please create your stick man and let it move like a real man,I believe you can complete it perfectly.You can get the instruction from "No.5 Transformation" P63-82</p>
+						<span class="image"><img src="images/sk.gif" heigh="300" width="300" /></span>	
+									<hr class="major" />
+
+									<h2>Experiment Procedure</h2>
+									<p>First, write a funcion drawcube() by using OpenGL to draw some cubes to form the stick man with statement glTexCoord2f() and glVertex3f(). Call function drawcube() can draw a fixed size cube. However, stick man is consisted of 4 different size cubes, they are head, body, arm and leg. Luckily, a OpenGL function glScaled() help us that just call drawcube() can draw different size cubes. Till now, we draw a stick man successfully.</p>
+									<p>Next, let stick man move is a hard part in this experiment. The key problem is as soon as you want to change something, the stick man likely falls apart. The reason is the stick man doesn't know it is constrained. So we must make the sitck man be inseparable. Here I use transformation hierarchies. The picture below shows this way.</p>
+									<span class="image"><img src="images/p1_1.png" heigh="300" width="300" /></span>	
+									<p>For example, the shoulder moves, everythins below shoulder like arms do same actions. This way can make stick man move natrually. Till now, we can let stick man march on the spot.</p>
+									<p>
+									Finally, we want stick man walk a little distance. To realize this, we should add a transformation function at the outermost layer. Because of transformation hierarchies, the stick man will move from one point to another point as a whole. For some details, the rotate speed of arms and legs must be a suitable value, or the stick man will move very strangely.</p>
+
+									<hr class="major" />
+
+									<h2>Demo</h2>
+				<article id="pj1">
+				<h2 class="major"</h2>
+				<span class="video main"><video src="stick_man.mp4" heigh="800" width="800" controls="controls"></video></span>
+				</article>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="project1.html">Stick Man</a></li>
+										<li><a href="project2.html">Illumination</a></li>
+										<li><a href="project3.html">texture(OP)</a></li>
+										<li><a href="project4.html">Ray Tracing</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Links</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="http://www.cs.sdu.edu.cn/~baoquan/course/S17_CG.html" class="image"><img src="images/cg.png" /></a>
+											<p>Course Website </p>
+										</article>
+										<article>
+											<a href="http://irc.cs.sdu.edu.cn/webAction!index.chtml" class="image"><img src="images/irc.png" /></a>
+											<p>IRC </p>
+										</article>
+										<article>
+											<a href="http://www.cs.sdu.edu.cn/~baoquan/" class="image"><img src="images/chen2.png"  /></a>
+											<p>Baoquan Chen</p>
+										</article>
+										<article>
+											<a href="http://yangyan.li/" class="image"><img src="images/li.png"  /></a>
+											<p>Yangyan li</p>
+										</article>
+										<article>
+											<a href="https://en.wikipedia.org/wiki/Computer_graphics" class="image"><img src="images/wiki.png"  /></a>
+											<p>Wiki</p>
+										</article>
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">im.renascence@gmail.com</a></li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+
+						</div>
+					</div>
+
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Ray Tracing - Renascence</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Ray Tracing</h1>
+									</header>
+
+
+
+									<hr class="major" />
+
+									<h2>Requirement</h2>
+									<p>Implement ray tracing algorithm</p>
+									<hr class="major" />
+
+									<h2>Experiment Procedure</h2>
+									<p>Ray tracing is a technique for generating an image by tracing the path of light through pixels in an image plane and simulating the effects of its encounters with virtual objects.</p>
+									<span class="image"><img src="images/p4_10.png"  /></span>	
+									<p>First need to implement a vector3 class, as a point in the space. At the same time to add in the class for the point of the operation, such as addition, dot multiplication, normalization, etc., while adding a vector3.zeros as a constant, to avoid the calculation after repeated generation.</p>
+
+									<p>The construction of light is based on the formula</p>
+									<span class="image"><img src="images/p4_1.png" /></span>	
+									<p>Where o is the starting point, d is the direction, where d takes the unit vector</p>
+
+									<p>Where the three-dimensional objects take the sphere, the sphere's formula is</p>
+									<span class="image"><img src="images/p4_2.png" /></span>
+									<p>
+									Where c is the sphere center and r is the radius</p>
+									<p>To determine whether the light and the ball intersect, just take the light equation into the sphere equation, solution</p>
+									<span class="image"><img src="images/p4_3.png" /></span>
+									<p>If the root number is negative, it does not intersect</p>
+									<p>Next to achieve the camera, here is the perspective of the camera, perspective camera and the naked eye and the real camera is similar to the performance of near large and small observation. Need to define up and down, left and right and angle. As shown below</p>
+									<span class="image"><img src="images/p4_4.png" /></span>
+									<p>The following colors are achieved. There are three attributes of color that RGB, similar to vector3, the need to achieve the operation between the color. On the sphere to achieve Phong material, using Phong light model</p>
+									<span class="image"><img src="images/p4_5.png" /></span>
+									<p>Add a plane below the sphere in the scene, where the plane is in the form of a checkerboard, but it does not use texture mapping here, but simply divides the plane into some pieces, set to black and white. The plane can be defined by the following formula</p>
+									<span class="image"><img src="images/p4_6.png" /></span>
+									<p>It is also easy to calculate whether the light intersects the plane</p>
+									<p>Finally, the key to calculating the reflection and reflection is to calculate the direction of the reflected light</p>
+									<span class="image"><img src="images/p4_7.png" /></span>
+									<p>As can be seen from the figure, the direction of light after reflection is</p>
+									<span class="image"><img src="images/p4_8.png" /></span>
+									<p>The reflection of the light is a recursive process, and the final object's color is the color of the reflected light multiplied by the reflectivity plus the color by itself. If the non-stop reflection will result in a large number of operations, and the impact of the subsequent reflection on the color will be smaller and smaller, so no need to calculate a lot of reflection, set a maximum number of reflection can effectively improve performance. The maximum number of reflections set here is 3</p>
+									<hr class="major" />
+
+									<h2>Demo</h2>
+									<p>The three spheres are provided with different reflectivities, and it is apparent that the difference between the reflectance is 0 and the non-zero, the difference between the reflectance of 0.25 and 0.5 is relatively small, and the left and right spheres have some deformation due to the perspective camera The At the same time because the plane is also set a reflection coefficient, so you can see the sphere on the plane of the reflection.
+									</p>
+									<span class="image"><img src="images/p4_9.png" /></span>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="project1.html">Stick Man</a></li>
+										<li><a href="project2.html">Illumination</a></li>
+										<li><a href="project3.html">texture(OP)</a></li>
+										<li><a href="project4.html">Ray Tracing</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Links</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="http://www.cs.sdu.edu.cn/~baoquan/course/S17_CG.html" class="image"><img src="images/cg.png" /></a>
+											<p>Course Website </p>
+										</article>
+										<article>
+											<a href="http://irc.cs.sdu.edu.cn/webAction!index.chtml" class="image"><img src="images/irc.png" /></a>
+											<p>IRC </p>
+										</article>
+										<article>
+											<a href="http://www.cs.sdu.edu.cn/~baoquan/" class="image"><img src="images/chen2.png"  /></a>
+											<p>Baoquan Chen</p>
+										</article>
+										<article>
+											<a href="http://yangyan.li/" class="image"><img src="images/li.png"  /></a>
+											<p>Yangyan li</p>
+										</article>
+										<article>
+											<a href="https://en.wikipedia.org/wiki/Computer_graphics" class="image"><img src="images/wiki.png"  /></a>
+											<p>Wiki</p>
+										</article>
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">im.renascence@gmail.com</a></li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+
+						</div>
+					</div>
+
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
